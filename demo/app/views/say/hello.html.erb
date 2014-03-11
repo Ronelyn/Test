@@ -1,0 +1,24 @@
+<h1>Hello from Rails!</h1>
+
+<p>
+  Halloooooooooooo!
+</p>
+
+<p>
+  The current date is: <%= @time %>
+</p>
+
+<p>
+  Wanna see our files? 
+</p>
+
+<p><% @current_directory_files.count %></p>
+
+<ul>
+  <% @current_directory_files.each do |file| %>
+      <li><%= file %></li>
+  <% end %>
+</ul>
+<p>
+    Time to <%= link_to "go?", say_hello_path %>
+</p>
