@@ -37,7 +37,7 @@ class ProductTest < ActiveSupport::TestCase
     product = create_valid_test_product
     product.price = 'invalid price'
     assert product.invalid?
-    assert_equal [I18n.translate('is not a number')],
+    assert_equal ['is not a number'],
       product.errors[:price]
   end
   
@@ -67,6 +67,13 @@ class ProductTest < ActiveSupport::TestCase
     product = create_valid_test_product
     product.title = products(:ruby).title
     assert product.invalid?
-    assert_equal [I18n.translate('has already been taken')], product.errors[:title]
+    assert_equal ['has already been taken'], product.errors[:title]
+  end
+  
+  test 'product title minimum length 5 characters' do
+    product = create_valid_test_product
+    product.title = 'Four'
+    assert product.invalid?
+    assert_equal ["is too short (minimum is 5 characters)"], product.errors[:title]
   end
 end
