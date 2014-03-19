@@ -8,7 +8,7 @@
 #---
 # encoding: utf-8
 Product.delete_all
-Product.create!(title: 'Spud',
+Product.create!(title: 'Spuds',
   description:
     %{<p>
 	    Dude, if you don't know what a potato is, there's seriously no helping you. 

@@ -76,4 +76,9 @@ class ProductTest < ActiveSupport::TestCase
     assert product.invalid?
     assert_equal ["is too short (minimum is 5 characters)"], product.errors[:title]
   end
+  
+  test '.latest property indicates newest product added' do
+    product = create_valid_test_product
+    
+  end
 end
