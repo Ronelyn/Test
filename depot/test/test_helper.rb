@@ -13,8 +13,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   
-  def create_valid_test_product
-    valid_product = Product.new(title: 'ProductModelTest',
+  def create_valid_test_product(product_title = 'ProductModelTest')
+    valid_product = Product.create(title: product_title,
                   description:  'Product Model Test',
                   image_url:    'productmodeltest.jpg',
                   price:        0.5)

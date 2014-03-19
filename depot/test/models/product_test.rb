@@ -78,7 +78,9 @@ class ProductTest < ActiveSupport::TestCase
   end
   
   test '.latest property indicates newest product added' do
-    product = create_valid_test_product
-    
+    initial_product = create_valid_test_product
+    final_product = create_valid_test_product('Final Book Title')
+    refute_equal Product.latest, initial_product, 'First product incorrectly listed as latest'
+    assert_equal Product.latest, final_product, 'Latest product thinks it is not the latest'
   end
 end
