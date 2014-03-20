@@ -57,8 +57,4 @@ class CartsControllerTest < ActionController::TestCase
     assert_equal product_id, @cart.add_product(product_id).quantity, 'Cart returned wrong product ID'
   end
   
-  test "should have invalid_cart method" do
-      assert_respond_to @cart, :invalid_cart
-  end
-
 end
