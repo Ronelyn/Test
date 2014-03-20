@@ -47,9 +47,8 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_redirected_to line_items_path
   end
   
-  test 'line item has quantity'
-    puts @line_item[:quantity]
-    assert_respond_to @line_item[:quantity]
+  test "line item has integer quantity" do
+    assert_equal @line_item[:quantity], 1
   end
 
 end
