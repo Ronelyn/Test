@@ -46,4 +46,15 @@ class CartsControllerTest < ActionController::TestCase
 
     assert_redirected_to carts_path
   end
+  
+  test "should have add_product method" do
+    product_id = 1
+    assert_respond_to @cart, :add_product
+  end
+  
+  test "cart returns correct added product" do
+    product_id = 1
+    assert_equal product_id, @cart.add_product(product_id).quantity, 'Cart returned wrong product ID'
+  end
+
 end
