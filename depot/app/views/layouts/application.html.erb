@@ -15,16 +15,17 @@
     <div id="side">
 	  <ul>
 	    <li><a href="/">Home</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/questions">Questions</a></li>
-      <li><a href="/products">Seller Site</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li> <a href="."><%= Time.now %></a></li>
-      <li>
-      	<% session[:visit_counter] = 0 if session[:visit_counter].nil? %>
-    	<% session[:visit_counter] += 1%>
-    	<%= session[:visit_counter] %>
-      </li>
+	      <li><a href="/news">News</a></li>
+	      <li><a href=<%= "/carts/#{session[:cart_id]}" %>>My Cart</a></li>
+	      <li><a href="/questions">Questions</a></li>
+	      <li><a href="/products">Seller Site</a></li>
+	      <li><a href="/contact">Contact</a></li>
+	      <li class ='sidebar-element'><%= Time.now %></li>
+	      <li class ='sidebar-element'>
+	      	<% session[:visit_counter] = 0 if session[:visit_counter].nil? %>
+	    	<% session[:visit_counter] += 1%>
+	    	<%= "#{session[:visit_counter]} visits" %>
+	      </li>
       </ul>
     </div>
     <div id="main">
