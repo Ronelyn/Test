@@ -27,10 +27,11 @@
 	    	<%= "#{session[:visit_counter]} visits" %>
 	      </li>
       </ul>
-      <%= generate_hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-      	<%= render @cart %>
-      <% end %>
-      
+	      <% if @cart %>
+		      <%= generate_hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+		      	<%= render @cart %>
+		      <% end %>
+		  <% end %>
     </div>
     <div id="main">
       <%= yield %>
