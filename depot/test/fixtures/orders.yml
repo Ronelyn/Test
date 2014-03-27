@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: One
   address: MyText
-  email: MyString
-  pay_type: MyString
+  email: one@one.one
+  pay_type: Extortion
 
 two:
-  name: MyString
+  name: two
   address: MyText
-  email: MyString
-  pay_type: MyString
+  email: two@two.two
+  pay_type: Credit
