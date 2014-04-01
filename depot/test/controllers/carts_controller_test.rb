@@ -49,13 +49,24 @@ class CartsControllerTest < ActionController::TestCase
   end
   
   test "should have add_product method" do
-    product_id = 1
     assert_respond_to @cart, :add_product
   end
   
   test "cart returns correct added product" do
     product_id = 1
     assert_equal product_id, @cart.add_product(product_id).quantity, 'Cart returned wrong product ID'
+  end
+  
+  test "adding duplicate product increments quantity" do
+    product_id = products(:ruby).id
+     2.times do 
+       puts "Added product #{products(:ruby)}"
+       @cart.add_product(product_id)
+     end
+     puts "#{@cart.line_items.length} line items in cart"
+     @cart.line_items.each do |item|
+       puts "#{item} has #{item.quantity} of #{products(:ruby).title}"
+     end
   end
   
 end

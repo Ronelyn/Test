@@ -49,6 +49,11 @@ class LineItemsControllerTest < ActionController::TestCase
   test "line item has integer quantity" do
     assert_equal @line_item[:quantity], 1
   end
+  
+  test "line item quantity increases" do
+    @line_item[:quantity] = 2
+    assert_equal @line_item[:quantity], 2
+  end 
 
   test "should create line_item via ajax" do
     assert_difference('LineItem.count') do
